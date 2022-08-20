@@ -6,6 +6,8 @@
 
 #RUN use for run a command while building an image. i.e,
 
-ADD   centos:7
+FROM  centos:7
+RUN   yum install epel -y
+# epel is third party repository. in this repo we have nginx, so we installing epel before nginx
 RUN   yum install nginx -y
 
