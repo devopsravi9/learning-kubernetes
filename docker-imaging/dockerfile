@@ -1,13 +1,17 @@
-#FROM uses for sourcing image and create our image. after run ( docker build . ) command to create image
-#ADD use for add a file into image ( ADD file_name folder_name )
+#FROM         uses for sourcing image and create our image. after run ( docker build . ) command to create image
+#ADD          use for add a file into image ( ADD file_name folder_name )
+#RUN          use for run a command while building an image.
+#ENTRYPOINT   use to run a command while launching a container
 
 #FROM nginx
 #ADD index.html /usr/share/nginx/html/index.html
 
-#RUN use for run a command while building an image. i.e,
+#RUN          use for run a command while building an image.
+#ENTRYPOINT
 
 FROM  centos:7
-RUN   yum install epel -y
+RUN   yum install epel-release -y
 # epel is third party repository. in this repo we have nginx, so we installing epel before nginx
 RUN   yum install nginx -y
+
 
