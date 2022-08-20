@@ -1,10 +1,12 @@
 //all below can get from kubernetes documentation
 //first 4 options common for almost all
 
+// kubectl apply -f 01-pod.yml command to execute this pod file or for create pod
+
 kind: pod
 apiVersion: v1
 metadata:
-  name: sample1
+  - name: sample1
 spec:
   containers:
     - name: nginx
