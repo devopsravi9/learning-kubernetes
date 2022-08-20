@@ -1,0 +1,2 @@
+#uses for sourcing image and create our image. after run ( docker build . ) command to create image
+FROM nginx
