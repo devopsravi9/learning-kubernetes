@@ -1,0 +1,12 @@
+//all below can get from kubernetes documentation
+//first 4 options common for almost all
+
+kind: pod
+apiVersion: v1
+metadata:
+  name: sample1
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+
