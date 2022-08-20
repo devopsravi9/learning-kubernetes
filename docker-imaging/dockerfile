@@ -2,16 +2,18 @@
 #ADD          use for add a file into image ( ADD file_name folder_name )
 #RUN          use for run a command while building an image.
 #ENTRYPOINT   use to run a command while launching a container
+#EXPOSE       use to open a port by container
+
+# epel is third party repository. in this repo we have nginx, so we installing epel before nginx
+
 
 #FROM nginx
 #ADD index.html /usr/share/nginx/html/index.html
 
-#RUN          use for run a command while building an image.
-#ENTRYPOINT
-
-FROM  centos:7
-RUN   yum install epel-release -y
-# epel is third party repository. in this repo we have nginx, so we installing epel before nginx
-RUN   yum install nginx -y
+FROM       centos:7
+RUN        yum install epel-release -y
+RUN        yum install nginx -y
+EXPOSE     80
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
 
 
