@@ -6,6 +6,10 @@
 #command =    ENTRYPOINT  +  CMD
 #             ping -c3       google.com
 #CMD          the CMD word that we can pass from cli also while run a container. its a type of var with some default value
+#USER         to switch user
+#WORKDIR      replica cd command
+#these are most useful command in docker for more check docker documentation
+
 
 # epel is third party repository. in this repo we have nginx, so we installing epel before nginx
 # ping -c3 google.com  is a regular command that repeats google.com -c3 times
@@ -18,7 +22,7 @@
 #EXPOSE     80
 #ENTRYPOINT ["nginx", "-g", "daemon off;"]
 
-FROM  centos:7
+FROM centos:7
 CMD   ["google.com"]
-ENTRYPOINT  ["ping", "-c3"]
+ENTRYPOINT ["ping", "-c3"]
 
