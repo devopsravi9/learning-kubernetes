@@ -59,8 +59,9 @@ kind: ConfigMap
 metadata:
   name: configmap1
 data:
-  SPECIAL_LEVEL: very
-  SPECIAL_TYPE: charm
+   URL: example.com
+   SUBDOMAIN: sample
+   FQDN: sample.example.com
 
 
 ---
