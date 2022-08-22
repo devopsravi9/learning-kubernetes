@@ -104,3 +104,31 @@ spec:
     - configMapRef:
         name: configmap1
 
+---
+# echo -n admin1 | base64
+# echo -n admin1 | base64
+# run above command to get decode value of user and passwd
+---
+kind: Secret
+apiVersion: v1
+metadata:
+  name: secret1
+data:
+  dbUsername: YWRtaW4x
+  dbPassword: YWRtaW4xMjM0
+
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: sample7
+spec:
+  containers:
+  - name: centos
+    image: centos:7
+    command: ["sleep"]
+    args: ["10000"]
+    envFrom:
+    - secretRef:
+        name: secret1
+
