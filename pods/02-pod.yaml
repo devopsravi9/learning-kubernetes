@@ -76,4 +76,30 @@ spec:
     command : ["sleep", "10000"]
     envFrom:
       - configMapRef:
-        name: configmap1
+          name: configmap1
+
+
+---
+
+#kind: ConfigMap
+#apiVersion: v1
+#metadata:
+#  name: configmap1
+#data:
+#  URL: example.com
+#  SUBDOMAIN: sample
+#  FQDN: sample.example.com
+#---
+#kind: Pod
+#apiVersion: v1
+#metadata:
+#  name: sample6
+#spec:
+#  containers:
+#  - name: centos
+#    image: centos:7
+#    command: ["sleep", "10000"]
+#    envFrom:
+#    - configMapRef:
+#        name: configmap1
+#
