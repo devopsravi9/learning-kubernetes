@@ -57,7 +57,7 @@ spec:
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: configMap1
+  name: configmap1
 data:
   URL: example.com
   SUBDOMAIN: some.name
