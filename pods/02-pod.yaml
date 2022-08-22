@@ -108,6 +108,7 @@ spec:
 # echo -n admin1 | base64
 # echo -n admin1 | base64
 # run above command to get decode value of user and passwd
+#args and commands are same
 ---
 kind: Secret
 apiVersion: v1
@@ -131,4 +132,26 @@ spec:
     envFrom:
     - secretRef:
         name: secret1
+
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample8
+spec:
+  containers:
+  - name: liveness
+    image: k8s.gcr.io/busybox
+    args:
+    - /bin/sh
+    - -c
+    - touch /tmp/healthy; sleep 30; rm -f /tmp/healthy; sleep 600
+    livenessProbe:
+      exec:
+        command:
+        - cat
+        - /tmp/healthy
+      initialDelaySeconds: 5
+      periodSeconds: 5
 
