@@ -20,7 +20,7 @@
 #  - name: mongodb
 #    image: mongo
 #
-----
+
 
 kind: Pod
 apiVersion: v1
