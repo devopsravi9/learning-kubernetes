@@ -48,3 +48,18 @@ spec:
     env:
     - name: URL
       value: example.com
+
+# this env used for send env variable. but in reality trher are more env vars for that
+#we use   "ConfigMap"     option
+
+---
+
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: ConfigMap1
+data:
+  URL: example.com
+  SUBDOMAIN: some.name
+  FQDN: example.domain.name
+
