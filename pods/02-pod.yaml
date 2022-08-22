@@ -54,14 +54,14 @@ spec:
 
 ---
 
-kind: ConfigMap
 apiVersion: v1
+kind: ConfigMap
 metadata:
   name: configmap1
 data:
-  URL: example.com
-  SUBDOMAIN: some.name
-  FQDN: example.domain.name
+  SPECIAL_LEVEL: very
+  SPECIAL_TYPE: charm
+
 
 ---
 
@@ -75,5 +75,5 @@ spec:
     image: centos:7
     command : ["sleep", "10000"]
     envFrom:
-    - configMapRef:
-        name: configMap1
+      - configMapRef:
+        name: configmap1
