@@ -33,3 +33,18 @@ spec:
   - name: centos
     image: centos:7
     command : ["sleep", "10000"]
+
+---
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: sample5
+spec:
+  containers:
+  - name: centos
+    image: centos:7
+    command : ["sleep", "10000"]
+    env:
+    - name: URL
+      value: example.com
