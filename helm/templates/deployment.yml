@@ -1,0 +1,25 @@
+#deployment not supports parameters
+#we have to write same code for each app those many times.
+#so we came with HELM CHARTS.
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    app: guestbook
+    tier: frontend-deploy
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: frontend-deploy
+  template:
+    metadata:
+      labels:
+        tier: frontend-deploy
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.18
