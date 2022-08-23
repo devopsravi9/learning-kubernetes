@@ -45,11 +45,11 @@ spec:
     image: nginx
     resources :
       requests :
-        cpu: "50"
-        mem: "128Mi"
+        cpu: "50m"
+        memory: "128Mi"
       limits :
-        cpu : "100"
-        mem : "256Mi"
+        cpu : "100m"
+        memory : "256Mi"
 
 ---
 
@@ -68,6 +68,7 @@ spec:
 
 # this env used for send env variable. but in reality trher are more env vars for that
 #we use   "ConfigMap"     option
+#1cpu = 1000 milli core, request are min, limits are max values
 
 
 ---
