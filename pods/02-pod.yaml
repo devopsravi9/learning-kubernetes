@@ -35,6 +35,23 @@ spec:
     command : ["sleep", "10000"]
 
 ---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: sample4
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    resources :
+      requests :
+        cpu: "50"
+        mem: "128Mi"
+      limits :
+        cpu : "100"
+        mem : "256Mi"
+
+---
 
 kind: Pod
 apiVersion: v1
@@ -51,33 +68,6 @@ spec:
 
 # this env used for send env variable. but in reality trher are more env vars for that
 #we use   "ConfigMap"     option
-
----
-
-#kind: ConfigMap
-#apiVersion: v1
-#metadata:
-#  name: configmap1
-#data:
-#   URL: example.com
-#   SUBDOMAIN: sample
-#   FQDN: sample.example.com
-#
-#
-#---
-#
-#kind: Pod
-#apiVersion: v1
-#metadata:
-#  name: sample6
-#spec:
-#  containers:
-#  - name: centos
-#    image: centos:7
-#    command : ["sleep", "10000"]
-#    envFrom:
-#      - configMapRef:
-#          name: configmap1
 
 
 ---
