@@ -5,20 +5,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-1
+  name: {{ .value.appName }}
   labels:
     app: guestbook
-    tier: frontend-deploy-1
+    tier: {{ .value.appName }}-deploy
 spec:
   # modify replicas according to your case
   replicas: 3
   selector:
     matchLabels:
-      tier: frontend-deploy-1
+      tier: {{ .value.appName }}-deploy
   template:
     metadata:
       labels:
-        tier: frontend-deploy-1
+        tier: {{ .value.appName }}-deploy
     spec:
       containers:
       - name: nginx
