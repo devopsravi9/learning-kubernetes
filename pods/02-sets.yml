@@ -19,3 +19,28 @@ spec:
       containers:
       - name: nginx
         image: nginx:1.16
+
+# if we change nginx image version replicaset can't identify that. i.e, it can't upgrade  a container
+# so we use deployment instead of replicaset.
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    app: guestbook
+    tier: frontend-deploy
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: frontend-deploy
+  template:
+    metadata:
+      labels:
+        tier: frontend-deploy
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.16
