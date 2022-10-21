@@ -1,4 +1,15 @@
-kind: pod
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: configMap1
+data:
+  URL: google.com
+  SOURCE: google
+
+
+
+---
+kind: Pod
 apiVersion: v1
 metadata:
   name: sample1
