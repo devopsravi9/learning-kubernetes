@@ -24,7 +24,7 @@ spec:
         name: configmap1
   - name: nginx
     image: nginx
-    ports:
+    port:
       containerPort: 80
 
 
