@@ -22,9 +22,7 @@ spec:
     envFrom:
     - configMapRef:
         name: configmap1
-  - name : my-nginx
-    image : nginx
-    ports :
-    - containerPort : 80
-
-
+  - name: nginx
+    image: nginx
+    ports:
+      containerPort: 80
