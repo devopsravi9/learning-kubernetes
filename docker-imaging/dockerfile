@@ -1,3 +1,17 @@
+kubectl
+
+
+The Kubernetes command-line tool is kubectl. it allows you to run commands against Kubernetes clusters.
+
+You can use kubectl to deploy applications, inspect and manage cluster resources, and view logs. For more information including a complete list of kubectl operations, see the kubectl reference documentation.
+
+kubectl is installable on a variety of Linux platforms, macOS and Windows. Find your preferred operating system below.
+
+
+
+
+
+
 #FROM         uses for sourcing image and create our image. after run ( docker build . ) command to create image
 #ADD          use for add a file into image ( ADD file_name folder_name )
 #RUN          use for run a command while building an image.
@@ -7,7 +21,7 @@
 #             ping -c3       google.com
 #CMD          the CMD word that we can pass from cli also while run a container. its a type of var with some default value
 #USER         to switch user
-#WORKDIR      replica cd command
+#WORKDIR      replica to cd command
 #these are most useful command in docker for more check docker documentation
 
 
