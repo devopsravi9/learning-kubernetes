@@ -18,7 +18,8 @@ spec:
   containers:
   - name: centos
     image: centos:7
-    command: ["sleep", "100000"]
+    command: ["/bin/sh", "-c"]
+    args: ["ls ; ls -al"]
     envFrom:
     - configMapRef:
         name: configmap1
