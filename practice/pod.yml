@@ -32,8 +32,8 @@ metadata:
   name: liveness
 spec:
   containers:
-  - name: liveness
-    image: registry.k8s.io/busybox
+  - name: nginx
+    image: nginx
     args:
     - /bin/sh
     - -c
