@@ -1,10 +1,11 @@
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: configMap1
+  name: configmap1
 data:
-  URL: google.com
-  SOURCE: google
+  URL: example.com
+  SUBDOMAIN: sample
+  FQDN: sample.example.com
 
 
 
@@ -15,17 +16,16 @@ metadata:
   name: sample1
 spec:
   containers:
+  - name: centos
+    image: centos:7
+    command: ["sleep", "10000"]
+    envFrom:
+    - configMapRef:
+        name: configmap1
   - name: nginx
     image: nginx
     ports:
-      - containerPort: 80
-    envFrom:
-      configMapRef:
-        - name: configMap1
-  - name: centos
-    image: centos:7
-    command: ["sleep", "100000"]
-
+      containerPort: 80
 
 
 
