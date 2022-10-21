@@ -59,6 +59,5 @@ spec:
         - /tmp/healthy
       initialDelaySeconds: 5
       periodSeconds: 5
-    - name: centos
-      image: centos:7
-      command: ["sleep", "10000"]
+
+
