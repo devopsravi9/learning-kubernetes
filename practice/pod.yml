@@ -19,7 +19,7 @@ spec:
   - name: centos
     image: centos:7
     command: ["/bin/sh", "-c"]
-    args: ["ls ; ls -al"]
+    args: ["sleep 10 ; sleep 100"]
     envFrom:
     - configMapRef:
         name: configmap1
