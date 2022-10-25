@@ -2,7 +2,7 @@
 #we have to write same code for each app those many times.
 #so we came with HELM CHARTS.
 
-#helm install <some name> <location of helm directory> -f <name of app>
+#helm install <any name that we want give  for that job> <location of helm directory> -f <name of app>
 # helm install name ./helm -f cart.yml
 
 # ./helm containd deploymentset, configmao etc. cart.yaml is used to send variables
